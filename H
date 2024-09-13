@@ -1,0 +1,190 @@
+# Aplicaciones del Álgebra Lineal en el Análisis de Circuitos Eléctricos
+
+## Nombres completos:  
+[Nombre de los autores]
+
+## Carrera:  
+Ingeniería Eléctrica
+
+## Fecha:  
+[Fecha de entrega]
+
+---
+
+## Introducción
+
+El álgebra lineal es una de las ramas fundamentales de las matemáticas y tiene aplicaciones prácticas en múltiples disciplinas, entre ellas la ingeniería eléctrica. Los sistemas de ecuaciones lineales, las matrices y los espacios vectoriales permiten analizar y resolver problemas que involucran muchas variables interdependientes. Dentro de la ingeniería eléctrica, el álgebra lineal se utiliza ampliamente en el análisis de circuitos, el control de sistemas, las redes de transmisión de energía, el procesamiento de señales y en muchas otras áreas.
+
+En este ensayo, nos centraremos en cómo el álgebra lineal facilita la solución de problemas de análisis de circuitos eléctricos, específicamente a través del método de corrientes de malla. El objetivo es demostrar cómo esta herramienta matemática permite modelar y resolver circuitos complejos de manera eficiente.
+
+---
+
+## Justificación
+
+El análisis de circuitos eléctricos es fundamental para el diseño, optimización y mantenimiento de sistemas eléctricos. Cuando se trabaja con redes eléctricas de gran escala o con circuitos complejos, los métodos convencionales de resolución manual se vuelven ineficientes o imprácticos. Aquí es donde el álgebra lineal juega un papel crucial, proporcionando una estructura matemática clara y precisa que permite resolver sistemas de ecuaciones lineales que describen los circuitos.
+
+---
+
+## Planteamiento del problema
+
+El problema que abordaremos es el siguiente: **¿Cómo podemos aplicar el álgebra lineal para analizar y resolver un circuito eléctrico con múltiples mallas utilizando el método de corrientes de malla?**
+
+Este problema pertenece al campo de la **Teoría de Circuitos Eléctricos**, y es crucial porque, en circuitos complejos, es difícil resolver las ecuaciones de forma manual, ya que involucramos múltiples variables interconectadas (corrientes, voltajes y resistencias). La aplicación del álgebra lineal nos permite simplificar este proceso y obtener soluciones rápidas y precisas.
+
+---
+
+## Desarrollo del problema
+
+### Descripción del circuito
+
+El circuito consta de dos mallas con los siguientes elementos:
+
+- Resistencia \( R_1 = 10 \, \Omega \) en la malla 1
+- Resistencia \( R_2 = 15 \, \Omega \) en la malla 2
+- Resistencia \( R_3 = 5 \, \Omega \) compartida entre ambas mallas
+- Una fuente de voltaje \( V_1 = 12 \, V \) conectada a la primera malla.
+
+Nuestro objetivo es encontrar las corrientes \( I_1 \) e \( I_2 \) que circulan por cada una de las mallas utilizando el álgebra lineal.
+
+### Aplicación de la Ley de Kirchhoff de Voltajes (KVL)
+
+La Ley de Kirchhoff de voltajes nos dice que la suma algebraica de las caídas de voltaje en una malla cerrada es igual a la suma de las fuerzas electromotrices (fuentes de voltaje).
+
+1. **Para la malla 1:**
+
+\[
+V_1 = I_1 R_1 + (I_1 - I_2) R_3
+\]
+
+Sustituyendo los valores:
+
+\[
+12 = I_1 \cdot 10 + (I_1 - I_2) \cdot 5
+\]
+
+Simplificando:
+
+\[
+12 = 15 I_1 - 5 I_2
+\]
+
+Esta es nuestra **ecuación 1**:
+
+\[
+15I_1 - 5I_2 = 12
+\]
+
+2. **Para la malla 2:**
+
+\[
+0 = I_2 R_2 + (I_2 - I_1) R_3
+\]
+
+Sustituyendo los valores:
+
+\[
+0 = I_2 \cdot 15 + (I_2 - I_1) \cdot 5
+\]
+
+Simplificando:
+
+\[
+0 = 20 I_2 - 5 I_1
+\]
+
+Esta es nuestra **ecuación 2**:
+
+\[
+-5I_1 + 20I_2 = 0
+\]
+
+### Formulación como un sistema de ecuaciones lineales
+
+Hemos obtenido un sistema de ecuaciones lineales que puede resolverse utilizando álgebra lineal:
+
+\[
+\begin{aligned}
+15 I_1 - 5 I_2 &= 12 \\
+-5 I_1 + 20 I_2 &= 0
+\end{aligned}
+\]
+
+Podemos reescribir este sistema como una ecuación matricial:
+
+\[
+\begin{pmatrix}
+15 & -5 \\
+-5 & 20
+\end{pmatrix}
+\begin{pmatrix}
+I_1 \\
+I_2
+\end{pmatrix}
+=
+\begin{pmatrix}
+12 \\
+0
+\end{pmatrix}
+\]
+
+### Resolución del sistema usando álgebra lineal
+
+Para resolver el sistema de ecuaciones, podemos usar la inversa de la matriz de coeficientes o algún método numérico como el método de eliminación de Gauss.
+
+1. **Usando el método de sustitución:**
+
+De la **ecuación 2**:
+
+\[
+-5 I_1 + 20 I_2 = 0
+\]
+
+Despejamos \( I_1 \):
+
+\[
+I_1 = 4 I_2
+\]
+
+Sustituyendo en la **ecuación 1**:
+
+\[
+15 (4 I_2) - 5 I_2 = 12
+\]
+
+\[
+60 I_2 - 5 I_2 = 12
+\]
+
+\[
+55 I_2 = 12
+\]
+
+\[
+I_2 = \frac{12}{55} \approx 0.218 \, A
+\]
+
+Ahora, sustituimos \( I_2 \) en la ecuación \( I_1 = 4 I_2 \):
+
+\[
+I_1 = 4 \times 0.218 = 0.872 \, A
+\]
+
+---
+
+## Conclusión
+
+El álgebra lineal es una herramienta poderosa que permite a los ingenieros eléctricos abordar problemas complejos de una manera sistemática y eficiente. En este ensayo, hemos visto cómo se aplica el álgebra lineal al análisis de circuitos mediante el método de corrientes de malla, lo que nos permite resolver sistemas de ecuaciones lineales de manera precisa. Además, el álgebra lineal tiene aplicaciones más amplias en áreas como el análisis de sistemas de potencia, el control de sistemas y el procesamiento de señales, lo que subraya su importancia en la ingeniería eléctrica.
+
+---
+
+## Bibliografía
+
+1. **Carl D. Meyer**. _Matrix Analysis and Applied Linear Algebra_. Society for Industrial and Applied Mathematics (SIAM), 2000.
+
+2. **David C. Lay, Steven R. Lay, Judi J. McDonald**. _Linear Algebra and Its Applications_. 5ta edición. Pearson, 2015.
+
+3. **Leon, S. J.** _Álgebra Lineal con Aplicaciones_. 8va edición. Pearson Educación, 2010.
+
+4. **John J. DeMarco y Gabriel Kousourou**. _Circuit Analysis: Theory and Practice_. 5ta edición. Delmar Cengage Learning, 2009.
+
+5. **Fawwaz T. Ulaby y Michel M. Maharbiz**. _Circuitos Eléctricos_. 3ra edición. Pearson, 2017.
